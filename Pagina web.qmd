@@ -1,0 +1,32 @@
+---
+title: "Sensores pagina web"
+author: "Lenna Pedroso Noris"
+format: html
+editor: visual
+---
+
+## SINCA
+
+El **Sistema de Información Nacional de Calidad del Aire(SINCA)** presenta aproximadamente 12 estaciones de monotoreo en la ciudad lo que limita la determinacion espacial de los contaminates de la ciudad y ppr ende la exposicion real de la poblacion <https://sinca.mma.gob.cl/>. 
+
+## Sensores de bajo costo
+Los sensores de bajo costo para medir la concentracion de material particulado han tenido gran aceptacion en los ultimps años debido a su bajo costo, accequibilidad y bajo consumo energetico.
+
+## Calibracion de los sensores 
+
+Una de las principales desventajas de la utilizacion de sensores de bajo costo como complemeto de la red actual de monitoreo es su calibracion ya que los datos obtenidos por e
+ 
+
+```{r}
+#Cargar datos
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
