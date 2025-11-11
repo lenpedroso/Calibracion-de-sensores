@@ -17,9 +17,7 @@ knitr::include_graphics("https://services.meteored.com/img/article/frio-cl-16601
 
 ## Sensores de bajo costo
 
-Los sensores de bajo costo para medir la concentracion de material particulado han tenido gran aceptacion en los ultimps años debido a su bajo costo, accequibilidad y bajo consumo energetico.
-
-Los sensores que se van a emplear son plontower para mayor informacion visitar <https://aqicn.org/sensor/pms1003/ru/>.
+Los sensores de bajo costo para medir la concentracion de material particulado han tenido gran aceptacion en los ultimps años debido a su bajo costo, accequibilidad y bajo consumo energetico.Los sensores que se van a emplear son plontower para mayor informacion visitar a <https://aqicn.org/sensor/pms1003/ru/>.
 
 ## Calibración de los sensores plantower
 
