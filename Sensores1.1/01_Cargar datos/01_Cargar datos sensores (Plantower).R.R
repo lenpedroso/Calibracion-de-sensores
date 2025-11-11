@@ -1,17 +1,23 @@
 
+# Es necesario instalar paquete para leer csv (install.packages("readr"). Chat gpt 
+# fue empleado para ordenar codigos y corregir errores
 
-# Seleccionar ambiente de trabajo -----------------------------------------
+# Cargar libreria ---------------------------------------------------------
+library(readr)
 
-setwd("C:\\Semestre 2-2025\\Visualizacion\\Calibracion de sensores\\Calibracion de sensores\\Sensores1.1")
+# Seleccionar datos desde git hub -----------------------------------------
 
+url <- "https://raw.githubusercontent.com/lenpedroso/Calibracion-de-sensores/master/Sensores1.1/00_Datos/CON_Plantower.csv"
+Condes_Plantower<- read_csv(url)
 
-# # Cargar archivos modificar para que lo ejecute desde hgit hub ----------
+# Especificar delimitador -------------------------------------------------
 
-Condes_Plantawer<- read.csv2("datos/CON_Plantawer.csv", header = TRUE)
+Condes_Plantower <- read_delim(url, delim = ";", locale = locale(decimal_mark = ","))
+
 # # Modificacion del formato de la fecha de los datos de los senso --------
 
-Condes_Plantawer$Fecha<-Condes_Plantawer$Fecha+ 20000000
-Condes_Plantawer$Hora<-Condes_Plantawer$Hora/100
-Condes_Plantawer$Hora<-paste(Condes_Plantawer$Hora,"00",sep=":",collapse = NULL)
-Condes_Plantawer$date<-paste(Condes_Plantawer$Fecha, Condes_Plantawer$Hora,sep = " ", collapse = NULL)
-Condes_Plantawer$date <- as.POSIXct(Condes_Plantawer$date, format = "%Y%m%d %H:%M", tz = "Etc/GMT+4")
+Condes_Plantower$Fecha<-Condes_Plantower$Fecha+ 20000000
+Condes_Plantower$Hora<-Condes_Plantower$Hora/100
+Condes_Plantower$Hora<-paste(Condes_Plantower$Hora,"00",sep=":",collapse = NULL)
+Condes_Plantower$date<-paste(Condes_Plantower$Fecha, Condes_Plantower$Hora,sep = " ", collapse = NULL)
+Condes_Plantower$date <- as.POSIXct(Condes_Plantower$date, format = "%Y%m%d %H:%M", tz = "Etc/GMT+4")
