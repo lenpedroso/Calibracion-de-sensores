@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
@@ -8,7 +8,7 @@
 
 <meta name="author" content="Lenna Pedroso Noris">
 
-<title>Calibración de sensores de bajo costo para medir MP2,5</title>
+<title>Calibración de sensores de bajo costo (PM₂.₅)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,128 +58,149 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="Pagina web2_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Pagina web2_files/libs/quarto-html/quarto.js"></script>
-<script src="Pagina web2_files/libs/quarto-html/popper.min.js"></script>
-<script src="Pagina web2_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Pagina web2_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Pagina web2_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Pagina web2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Pagina web2_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Pagina web2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Pagina web2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="pagina_web2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="pagina_web2_files/libs/quarto-html/quarto.js"></script>
+<script src="pagina_web2_files/libs/quarto-html/popper.min.js"></script>
+<script src="pagina_web2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="pagina_web2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="pagina_web2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="pagina_web2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="pagina_web2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="pagina_web2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="pagina_web2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #93c5fd;
+      }
+</style>
 
 
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Calibración de sensores de bajo costo (PM₂.₅)</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
 
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Calibración de sensores de bajo costo para medir MP2,5</h1>
+      <div>
+      <div class="quarto-title-meta-heading">Autor/a</div>
+      <div class="quarto-title-meta-contents">
+               <p>Lenna Pedroso Noris </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#sinca" id="toc-sinca" class="nav-link active" data-scroll-target="#sinca">SINCA</a></li>
+  <li><a href="#sensores-de-bajo-costo" id="toc-sensores-de-bajo-costo" class="nav-link" data-scroll-target="#sensores-de-bajo-costo">Sensores de bajo costo</a></li>
+  <li><a href="#calibración-de-los-sensores-plantower" id="toc-calibración-de-los-sensores-plantower" class="nav-link" data-scroll-target="#calibración-de-los-sensores-plantower">Calibración de los sensores plantower</a>
+  <ul class="collapse">
+  <li><a href="#grafico-box-plot" id="toc-grafico-box-plot" class="nav-link" data-scroll-target="#grafico-box-plot">Grafico Box Plot</a></li>
+  <li><a href="#ecuación-de-calibración" id="toc-ecuación-de-calibración" class="nav-link" data-scroll-target="#ecuación-de-calibración">Ecuación de calibración</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Lenna Pedroso Noris </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-
-</header>
 
 
 <section id="sinca" class="level2">
 <h2 class="anchored" data-anchor-id="sinca">SINCA</h2>
 <p>El <strong>Sistema de Información Nacional de Calidad del Aire(SINCA)</strong> presenta aproximadamente 12 estaciones de monotoreo en la ciudad lo que limita la determinacion espacial de los contaminates de la ciudad y ppr ende la exposicion real de la poblacion <a href="https://sinca.mma.gob.cl/" class="uri">https://sinca.mma.gob.cl/</a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://services.meteored.com/img/article/frio-cl-1660156354378_1024.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="sensores-de-bajo-costo" class="level2">
 <h2 class="anchored" data-anchor-id="sensores-de-bajo-costo">Sensores de bajo costo</h2>
-<p>Los sensores de bajo costo para medir la concentracion de material particulado han tenido gran aceptacion en los ultimps años debido a su bajo costo, accequibilidad y bajo consumo energetico.</p>
+<p>Los sensores de bajo costo para medir la concentracion de material particulado han tenido gran aceptacion en los ultimps años debido a su bajo costo, accequibilidad y bajo consumo energetico.Los sensores que se van a emplear son plontower para mayor informacion visitar a <a href="https://aqicn.org/sensor/pms1003/ru/" class="uri">https://aqicn.org/sensor/pms1003/ru/</a>.</p>
 </section>
-<section id="calibración-de-los-sensores" class="level2">
-<h2 class="anchored" data-anchor-id="calibración-de-los-sensores">Calibración de los sensores</h2>
-<p>Una de las principales desventajas de la utilizacion de sensores de bajo costo como complemeto de la red actual de monitoreo es su calibracion ya que los datos obtenidos por el sensor presentan alta incertidumbre. # Grafico de timevariation Para verificar el comportamiento de los sensores y su comparacion con los monitpres de referencia se realiza un grafico de time variation.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Cargar datos</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Condes_Plantawer_SINCA <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"data/Condes_Plantawer_SINCA.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar librerias</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openair)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Modificar fecha </span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Condes_Plantawer_SINCA<span class="sc">$</span>Fecha<span class="ot">&lt;-</span>Condes_Plantawer_SINCA<span class="sc">$</span>Fecha<span class="sc">+</span> <span class="dv">20000000</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Condes_Plantawer_SINCA<span class="sc">$</span>Hora<span class="ot">&lt;-</span>Condes_Plantawer_SINCA<span class="sc">$</span>Hora<span class="sc">/</span><span class="dv">100</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Condes_Plantawer_SINCA<span class="sc">$</span>Hora<span class="ot">&lt;-</span><span class="fu">paste</span>(Condes_Plantawer_SINCA<span class="sc">$</span>Hora,<span class="st">"00"</span>,<span class="at">sep=</span><span class="st">":"</span>,<span class="at">collapse =</span> <span class="cn">NULL</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Condes_Plantawer_SINCA<span class="sc">$</span>date<span class="ot">&lt;-</span><span class="fu">paste</span>(Condes_Plantawer_SINCA<span class="sc">$</span>Fecha, Condes_Plantawer_SINCA<span class="sc">$</span>Hora,<span class="at">sep =</span> <span class="st">" "</span>, <span class="at">collapse =</span> <span class="cn">NULL</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Condes_Plantawer_SINCA<span class="sc">$</span>date <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(Condes_Plantawer_SINCA<span class="sc">$</span>date, <span class="at">format =</span> <span class="st">"%Y%m%d %H:%M"</span>, <span class="at">tz =</span> <span class="st">"Etc/GMT+4"</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Time variation </span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">timeVariation</span>(<span class="at">mydata =</span> Condes_Plantawer_SINCA, </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">pollutant =</span> <span class="fu">c</span>(<span class="st">"PM25_P1"</span>, <span class="st">"PM25_P2"</span>, <span class="st">"PM25_P3"</span>, <span class="st">"PM25_P4"</span>, <span class="st">"PM25_P5"</span>, <span class="st">"PM25_SINCA"</span>), </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">main =</span> <span class="st">"Time variation Plantawer vs Sinca en Las Condes"</span>,</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">ylab =</span> <span class="fu">expression</span>(PM[<span class="fl">2.5</span>]<span class="sc">~</span><span class="st">" ("</span> <span class="sc">*</span> mu <span class="sc">*</span> <span class="st">"g/"</span> <span class="sc">*</span> m<span class="sc">^</span><span class="dv">3</span> <span class="sc">*</span> <span class="st">")"</span>) </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Pagina-web2_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar librerias</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># seleccionar columnas</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>Column_pm <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"PM25_P1"</span>,<span class="st">"PM25_P2"</span>,<span class="st">"PM25_P3"</span>,<span class="st">"PM25_P4"</span>,<span class="st">"PM25_P5"</span>,<span class="st">"PM25_SINCA"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a> <span class="co"># Convertir a formato largo</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>datos_long <span class="ot">&lt;-</span> Condes_Plantawer_SINCA <span class="sc">%&gt;%</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">all_of</span>(Column_pm),</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"Sensores"</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"PM25"</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sensores =</span> <span class="fu">factor</span>(</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    Sensores,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="fu">paste0</span>(<span class="st">"PM25_P"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>), <span class="st">"PM25_SINCA"</span>),</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"P1"</span>,<span class="st">"P2"</span>,<span class="st">"P3"</span>,<span class="st">"P4"</span>,<span class="st">"P5"</span>,<span class="st">"SINCA"</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>datos_long <span class="sc">%&gt;%</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(PM25) <span class="sc">%&gt;%</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sensores, <span class="at">y =</span> PM25, <span class="at">fill =</span> Sensores)) <span class="sc">+</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Pagina-web2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="calibración-de-los-sensores-plantower" class="level2">
+<h2 class="anchored" data-anchor-id="calibración-de-los-sensores-plantower">Calibración de los sensores plantower</h2>
+<p>Una de las principales desventajas de la utilizacion de sensores de bajo costo como complemeto de la red actual de monitoreo es su calibracion ya que los datos obtenidos por el sensor presentan alta incertidumbre.</p>
+<p>###Grafico de timevariation Para verificar el comportamiento de los sensores y su comparacion con los monitpres de referencia se realiza un grafico de time variation.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Pagina-web2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="pagina_web2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<section id="grafico-box-plot" class="level3">
+<h3 class="anchored" data-anchor-id="grafico-box-plot">Grafico Box Plot</h3>
+<p>Para realizar una comparacion preliminar sobre la comparacion de los sensores con respecto a los monitores de referencia SINCA</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar librerias</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># seleccionar columnas</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Column_pm <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"PM25_P1"</span>,<span class="st">"PM25_P2"</span>,<span class="st">"PM25_P3"</span>,<span class="st">"PM25_P4"</span>,<span class="st">"PM25_P5"</span>,<span class="st">"PM25_SINCA"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a> <span class="co"># Convertir a formato largo</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>datos_long <span class="ot">&lt;-</span> Condes_Plantawer_SINCA <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">all_of</span>(Column_pm),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"Sensores"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"PM25"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sensores =</span> <span class="fu">factor</span>(</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    Sensores,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="fu">paste0</span>(<span class="st">"PM25_P"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>), <span class="st">"PM25_SINCA"</span>),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"P1"</span>,<span class="st">"P2"</span>,<span class="st">"P3"</span>,<span class="st">"P4"</span>,<span class="st">"P5"</span>,<span class="st">"SINCA"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>datos_long <span class="sc">%&gt;%</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(PM25) <span class="sc">%&gt;%</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sensores, <span class="at">y =</span> PM25, <span class="at">fill =</span> Sensores)) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pagina_web2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ecuación-de-calibración" class="level3">
+<h3 class="anchored" data-anchor-id="ecuación-de-calibración">Ecuación de calibración</h3>
+<p>La siguiente figura muestra un analisis de regresion linial con el fin de calibrar los sensores. Además se muetra los valores de ajuste del modelo.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pagina_web2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
 </section>
 
 </main>
@@ -227,12 +248,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",

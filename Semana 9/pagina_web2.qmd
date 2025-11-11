@@ -1,8 +1,18 @@
 ---
-title: title: "Calibración de sensores de bajo costo para medir MP<sub>2.5</sub>"
+title: "Calibración de sensores de bajo costo (PM₂.₅)"
 author: "Lenna Pedroso Noris"
-format: html
-editor: visual
+lang: es
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-location: right
+    title-block-banner: "#93c5fd"   # color de fondo del banner
+    title-block-color: "white"      # color del texto del título
+execute:
+  echo: false       # oculta código
+  warning: false    # oculta warnings
+  message: false    # oculta mensajes
 ---
 
 ## SINCA
@@ -21,7 +31,9 @@ Los sensores de bajo costo para medir la concentracion de material particulado h
 
 ## Calibración de los sensores plantower
 
-Una de las principales desventajas de la utilizacion de sensores de bajo costo como complemeto de la red actual de monitoreo es su calibracion ya que los datos obtenidos por el sensor presentan alta incertidumbre. \# Grafico de timevariation Para verificar el comportamiento de los sensores y su comparacion con los monitpres de referencia se realiza un grafico de time variation.
+Una de las principales desventajas de la utilizacion de sensores de bajo costo como complemeto de la red actual de monitoreo es su calibracion ya que los datos obtenidos por el sensor presentan alta incertidumbre.
+
+###Grafico de timevariation Para verificar el comportamiento de los sensores y su comparacion con los monitpres de referencia se realiza un grafico de time variation.
 
 ```{r}
 
