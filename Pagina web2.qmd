@@ -1,5 +1,5 @@
 ---
-title: "Calibración de sensores de bajo costo para medir MP2,5"
+title: title: "Calibración de sensores de bajo costo para medir MP<sub>2.5</sub>"
 author: "Lenna Pedroso Noris"
 format: html
 editor: visual
@@ -9,15 +9,22 @@ editor: visual
 
 El **Sistema de Información Nacional de Calidad del Aire(SINCA)** presenta aproximadamente 12 estaciones de monotoreo en la ciudad lo que limita la determinacion espacial de los contaminates de la ciudad y ppr ende la exposicion real de la poblacion <https://sinca.mma.gob.cl/>.
 
+```{r}
+
+#| echo: false
+knitr::include_graphics("https://services.meteored.com/img/article/frio-cl-1660156354378_1024.jpg")
+```
+
 ## Sensores de bajo costo
 
 Los sensores de bajo costo para medir la concentracion de material particulado han tenido gran aceptacion en los ultimps años debido a su bajo costo, accequibilidad y bajo consumo energetico.
 
-## Calibración de los sensores
+Los sensores que se van a emplear son plontower para mayor informacion visitar <https://aqicn.org/sensor/pms1003/ru/>.
 
-Una de las principales desventajas de la utilizacion de sensores de bajo costo como complemeto de la red actual de monitoreo es su calibracion ya que los datos obtenidos por el sensor presentan alta incertidumbre.
-# Grafico de timevariation
-Para verificar el comportamiento de los sensores y su comparacion con los monitpres de referencia se realiza un grafico de time variation
+## Calibración de los sensores plantower
+
+Una de las principales desventajas de la utilizacion de sensores de bajo costo como complemeto de la red actual de monitoreo es su calibracion ya que los datos obtenidos por el sensor presentan alta incertidumbre. \# Grafico de timevariation Para verificar el comportamiento de los sensores y su comparacion con los monitpres de referencia se realiza un grafico de time variation.
+
 ```{r}
 
 #Cargar datos
@@ -41,16 +48,20 @@ timeVariation(mydata = Condes_Plantawer_SINCA,
 
 ```
 
+### Grafico Box Plot
+
+Para realizar una comparacion preliminar sobre la comparacion de los sensores con respecto a los monitores de referencia SINCA
+
 ```{r}
 #| echo: true
 #| message: false
 #| warning: false
-
-Column_pm <- c("PM25_P1", "PM25_P2", "PM25_P3", "PM25_P4", "PM25_P5", "PM25_Sinca")
-
-Column_pm <- intersect(Column_pm, names(Condes_Plantawer_SINCA))
-
-CONboxplot <- Condes_Plantawer_SINCA %>% 
+# Cargar librerias
+library(tidyverse)
+# seleccionar columnas
+Column_pm <- c("PM25_P1","PM25_P2","PM25_P3","PM25_P4","PM25_P5","PM25_SINCA")
+ # Convertir a formato largo
+datos_long <- Condes_Plantawer_SINCA %>%
   pivot_longer(
     cols = all_of(Column_pm),
     names_to = "Sensores",
@@ -58,24 +69,19 @@ CONboxplot <- Condes_Plantawer_SINCA %>%
   ) %>%
   mutate(Sensores = factor(
     Sensores,
-    levels = c(paste0("PM25_P", 1:5), "PM25_Sinca"),
-    labels = c("P1", "P2", "P3", "P4", "P5", "SINCA")
+    levels = c(paste0("PM25_P", 1:5), "PM25_SINCA"),
+    labels = c("P1","P2","P3","P4","P5","SINCA")
   ))
-
- 
- # Box plot
-
-ggplot(CONboxplot, aes(x = Sensores,
-                        y = PM25, fill = Sensores)) +
-  geom_boxplot(alpha = 0.7, outlier.shape = 21) +
-  labs(x = "Sensores", y = expression(PM[2.5]~" (" * mu * "g/" * m^3 * ")"), 
-       title = "Comparacion Plantawe vs SINCA") +
-  theme_bw(base_size = 13) +
-  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
-        legend.position = "none")
-
-
+# Grafico
+datos_long %>%
+  drop_na(PM25) %>%
+  ggplot(aes(x = Sensores, y = PM25, fill = Sensores)) +
+  geom_boxplot()
 ```
+
+### Ecuación de calibración
+
+La siguiente figura muestra un analisis de regresion linial con el fin de calibrar los sensores. Además se muetra los valores de ajuste del modelo.
 
 ```{r}
 #| echo: false
