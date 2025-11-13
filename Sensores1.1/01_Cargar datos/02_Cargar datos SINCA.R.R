@@ -24,4 +24,6 @@ help(package = "AtmChile") # Saber que tiene el paquete y como escribir las func
   Site = FALSE, # Si se pone TRUE es para ingresar el codigo de la estacion 
   Curar = FALSE, # Ajusta outliers y datos extremos (utiliza solo valores logicos)
   st = TRUE) # Añade una columna con el estado de validacion de los datos
+
+
  

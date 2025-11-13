@@ -14,10 +14,3 @@ Condes_Plantower<- read_csv(url)
 
 Condes_Plantower <- read_delim(url, delim = ";", locale = locale(decimal_mark = ","))
 
-# # Modificacion del formato de la fecha de los datos de los senso --------
-
-Condes_Plantower$Fecha<-Condes_Plantower$Fecha+ 20000000
-Condes_Plantower$Hora<-Condes_Plantower$Hora/100
-Condes_Plantower$Hora<-paste(Condes_Plantower$Hora,"00",sep=":",collapse = NULL)
-Condes_Plantower$date<-paste(Condes_Plantower$Fecha, Condes_Plantower$Hora,sep = " ", collapse = NULL)
-Condes_Plantower$date <- as.POSIXct(Condes_Plantower$date, format = "%Y%m%d %H:%M", tz = "Etc/GMT+4")

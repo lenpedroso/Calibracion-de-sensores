@@ -1,0 +1,145 @@
+---
+title: "Calibración de sensores de bajo costo (PM₂.₅)"
+author: "Lenna Pedroso Noris"
+lang: es
+output-dir: data
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-location: right
+    title-block-banner: "#93c5fd"   # color de fondo del banner
+    title-block-color: "white"      # color del texto del título
+execute:
+  echo: false       # oculta código
+  warning: false    # oculta warnings
+  message: false    # oculta mensajes
+---
+
+## SINCA
+
+El **Sistema de Información Nacional de Calidad del Aire(SINCA)** presenta con aproximadamente 12 estaciones de monitoreo en la ciudad, lo que limita la determinación espacial de los contaminantes y, por ende, la estimación de la exposición real de la población. <https://sinca.mma.gob.cl/>.
+
+```{r}
+
+#| echo: false
+knitr::include_graphics("https://services.meteored.com/img/article/frio-cl-1660156354378_1024.jpg")
+```
+
+## Sensores de bajo costo
+
+Los sensores de bajo costo para medir la concentración de material particulado han tenido una gran aceptación en los últimos años debido a su bajo costo, accesibilidad y reducido consumo energético. Los sensores que se utilizarán en este estudio corresponden al modelo Plantower; para más información, puede visitarse el sitio oficial del fabricante. <https://aqicn.org/sensor/pms1003/ru/>.
+
+## Calibración de los sensores plantower
+
+Una de las principales desventajas del uso de sensores de bajo costo como complemento de la red actual de monitoreo es su calibración, ya que los datos obtenidos por estos sensores presentan una alta incertidumbre.
+
+### Gráfico de timevariation
+
+Para verificar el comportamiento de los sensores y compararlos con los monitores de referencia, se realiza un gráfico de time variation.
+
+```{r}
+#| echo: true
+#Cargar datos
+Condes_Plantawer_SINCA <- read.csv2("data/Condes_Plantawer_SINCA.csv", header = TRUE)
+# Cargar librerias
+library(openair)
+# Modificar fecha 
+
+Condes_Plantawer_SINCA$Fecha<-Condes_Plantawer_SINCA$Fecha+ 20000000
+Condes_Plantawer_SINCA$Hora<-Condes_Plantawer_SINCA$Hora/100
+Condes_Plantawer_SINCA$Hora<-paste(Condes_Plantawer_SINCA$Hora,"00",sep=":",collapse = NULL)
+Condes_Plantawer_SINCA$date<-paste(Condes_Plantawer_SINCA$Fecha, Condes_Plantawer_SINCA$Hora,sep = " ", collapse = NULL)
+Condes_Plantawer_SINCA$date <- as.POSIXct(Condes_Plantawer_SINCA$date, format = "%Y%m%d %H:%M", tz = "Etc/GMT+4")
+
+# Time variation 
+timeVariation(mydata = Condes_Plantawer_SINCA, 
+              pollutant = c("PM25_P1", "PM25_P2", "PM25_P3", "PM25_P4", "PM25_P5", "PM25_SINCA"), 
+              main = "Time variation Plantawer vs Sinca en Las Condes",
+              ylab = expression(PM[2.5]~" (" * mu * "g/" * m^3 * ")") 
+)
+
+```
+
+### Grafico Box Plot
+
+Se efectuó una comparación preliminar entre los datos registrados por los sensores de bajo costo y los obtenidos por los monitores de referencia del Sistema de Información Nacional de Calidad del Aire (SINCA), con el fin de evaluar su grado de concordancia.
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+# Cargar librerias
+library(tidyverse)
+# seleccionar columnas
+Column_pm <- c("PM25_P1","PM25_P2","PM25_P3","PM25_P4","PM25_P5","PM25_SINCA")
+ # Convertir a formato largo
+datos_long <- Condes_Plantawer_SINCA %>%
+  pivot_longer(
+    cols = all_of(Column_pm),
+    names_to = "Sensores",
+    values_to = "PM25"
+  ) %>%
+  mutate(Sensores = factor(
+    Sensores,
+    levels = c(paste0("PM25_P", 1:5), "PM25_SINCA"),
+    labels = c("P1","P2","P3","P4","P5","SINCA")
+  ))
+# Grafico
+datos_long %>%
+  drop_na(PM25) %>%
+  ggplot(aes(x = Sensores, y = PM25, fill = Sensores)) +
+  geom_boxplot()
+```
+
+### Ecuación de calibración
+
+En la siguiente figura se presenta el análisis de regresión lineal empleado para la calibración de los sensores, junto con los principales parámetros de ajuste del modelo (pendiente, intercepto y coeficiente de determinación)
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(ggpmisc) 
+
+# para mostrar ecuación y R² en el gráfico
+
+df_long <- Condes_Plantawer_SINCA %>%
+  select(starts_with("PM25_")) %>%
+  pivot_longer(
+    cols = PM25_P1:PM25_P5,
+    names_to = "sensor",
+    values_to = "PM25_P"
+  )
+datos_long <- datos_long %>% drop_na(PM25)
+
+ggplot(df_long, aes(x = PM25_SINCA, y = PM25_P)) +
+  geom_point(alpha = 0.5, color = "blue") +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  stat_poly_eq(
+    aes(label = paste(..eq.label.., ..rr.label.., sep = "~~~")),
+    formula = y ~ x,
+    parse = TRUE,
+    label.x.npc = "left",
+    label.y.npc = 0.95,
+    size = 3.5,
+    color = "black"
+  ) +
+  facet_wrap(~ sensor, scales = "free") +
+  labs(
+    x = expression(PM[2.5]~SINCA~(mu*g/m^3)),
+    y = expression(PM[2.5]~Plantower~(mu*g/m^3)),
+    title = "Regresión lineal: Sensores Plantower (P1–P5) vs SINCA"
+  ) +
+  theme_bw() +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    strip.background = element_rect(fill = "lightgray"),
+    panel.grid.minor = element_blank()
+  )
+
+
+```
