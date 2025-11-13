@@ -10,7 +10,7 @@ library(lubridate)
 
 Las_Condes_Sinca_date <- Las_Condes_Sinca %>%
   mutate(date_hour = dmy_hm(date, tz = "America/Santiago")) %>% # Convertir date en formato POSIXct y zona horaria Santiago
-  transmute(date = date_hour, PM25 = as.numeric(PM25)) # Devuelve dos columanas date_hour y PM25(numerico) y descarta las demás
+  transmute(date_hour, PM25 = as.numeric(PM25)) # Devuelve dos columanas date_hour y PM25(numerico) y descarta las demás
 
 # Modificar formato de la fecha Sensores -------------------------------------------
 Condes_Plantower$Fecha<-Condes_Plantower$Fecha+ 20000000
