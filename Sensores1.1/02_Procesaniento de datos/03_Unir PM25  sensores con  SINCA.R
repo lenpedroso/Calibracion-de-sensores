@@ -34,3 +34,14 @@ Condes_Plantower_SINCA <- Condes_Plantower_1 %>%
 
 Condes_Plantower_SINCA <- Condes_Plantower_SINCA %>%
   rename(date = date_hour)
+# Eliminar NA
+Condes_Plantower_SINCA <- Condes_Plantower_SINCA %>% 
+  tidyr::drop_na()
+# Modificar fecha a formato POSIXct
+Condes_Plantower_SINCA <- Condes_Plantower_SINCA %>%
+  mutate(
+    date = ymd_hms(date),                                  #  convertir a POSIXct
+    hour = hour(date),                                     #  Las hora (0–23)
+    wday = wday(date, label = TRUE, abbr = TRUE,           #  día de la semana
+                week_start = 1)                            #    (Lunes = 1)
+  )
