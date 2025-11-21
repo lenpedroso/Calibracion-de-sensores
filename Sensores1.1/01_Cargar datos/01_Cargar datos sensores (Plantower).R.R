@@ -1,6 +1,7 @@
 
-# Es necesario instalar paquete para leer csv (install.packages("readr"). Chat gpt 
-# fue empleado para ordenar codigos y corregir errores
+# Es necesario instalar paquete para leer csv (install.packages("readr").  
+# Los datos se cargan desde mi cuenta de git hub personal
+# Chat gptfue empleado para ordenar codigos y corregir errores
 
 # Cargar libreria ---------------------------------------------------------
 library(readr)
