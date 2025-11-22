@@ -1,7 +1,16 @@
 # Calculo de los errores despues de aplicar un modelo de regresion lineal
 # Chat gpt
-# Cargar setup para cargar librerias, funciones para el cálculo de error --------------
-source("Cálculo de errores.R")
+
+# Cargar libreias
+library(here)
+
+# Seleccionar la ruta y carga las librerias y funciones para el cálculo de error --------------
+source(here(
+  "01_Scripts",
+  "03_Resultados",
+  "03_3_Analisis de errores",
+  "01_Cálculo de errores.R"
+))
 
  # Función que ajusta el modelo y calcula errores para cada sensor de bajo costo -------
 errores_por_sensor <- function(sensor) {

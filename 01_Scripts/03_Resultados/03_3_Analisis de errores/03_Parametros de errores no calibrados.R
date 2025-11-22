@@ -1,9 +1,19 @@
 # Chat GPT
 # se emplea la funcion setup para cargar el script con las funciones para el 
 # calculo de errores
+# Chat gpt fue empleado para modificar, ordenar y corregir errores en el codigo
+# Se debe instalar (install.packages("here")) para crear rutas más seguras
 
-# Cargar setup para cargar librerias, funciones para el cálculo de error --------------
-source("Cálculo de errores.R")
+# Cargar libreias
+library(here)
+
+# Seleccionar la ruta y carga las librerias y funciones para el cálculo de error --------------
+source(here(
+  "01_Scripts",
+  "03_Resultados",
+  "03_3_Analisis de errores",
+  "01_Cálculo de errores.R"
+))
 
 # Funcion para calcular los errores para cada sensor (tabla) --------------------
 errores_antes_calibracion <- map_dfr(sensores, function(sensor) { 
