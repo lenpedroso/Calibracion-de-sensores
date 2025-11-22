@@ -23,8 +23,8 @@ predicho   <- as.numeric(predicho) # Para garantizar que el argumento sea numér
 error   <- predicho - referencia
 error_abs  <- abs(error) # Error absoluto
 MB   <- mean(predicho - referencia, na.rm = TRUE)   # Sesgo          
+MGE <- mean(abs(predicho - referencia), na.rm = TRUE)  # Media del error absoluto medio
 SD_MB   <- sd(error, na.rm = TRUE) # Desviación estándar del sesgo
-MGE <- mean(abs(predicho - referencia), na.rm = TRUE)  # Media del error absoluto medio 
 SD_MGE <- sd(error_abs, na.rm = TRUE) # Desviación estándar del error absoluto
   
 # Obtener resultados en una tabla
