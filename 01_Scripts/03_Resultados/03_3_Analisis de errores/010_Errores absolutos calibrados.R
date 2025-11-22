@@ -1,6 +1,6 @@
-
 # Calculo de los errores absoluto para cada observación
 # Chat gpt fue empleado para modificar, ordenar y corregir errores en el codigo
+
 # Cargar libreria  ------------------------------------------------------
 library(purrr)
 

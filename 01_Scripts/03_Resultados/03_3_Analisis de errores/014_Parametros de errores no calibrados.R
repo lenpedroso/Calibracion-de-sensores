@@ -1,5 +1,5 @@
-# Este script permite calcular los parametros de errores(MGE,MB) y crear una 
-#tabla con los resultados para cada uno de los sensores.
+# Este script permite calcular los parametros de errores(MGE,MB, SD_MGE, SD_MM) 
+# y crear una tabla con los resultados para cada uno de los sensores.
 #Se debe instalar (install.packages("here")) para crear rutas que permitan 
 # cargar codigos (librerias, funciones) de script anteriores
 # Se debe descargar todas las carpeteas correspondientes a al proyecto 
@@ -16,7 +16,7 @@ source(here(
   "01_Scripts",
   "03_Resultados",
   "03_3_Analisis de errores",
-  "01_Cálculo de errores.R"
+  "08_Cálculo de errores.R"
 ))
 
 # Funcion para calcular los errores para cada sensor (tabla) --------------------

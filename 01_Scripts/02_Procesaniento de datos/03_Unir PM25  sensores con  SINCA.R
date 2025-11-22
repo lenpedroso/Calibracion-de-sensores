@@ -4,11 +4,11 @@
 # temporales (https://github.com/Saryace/datascience-sinca/blob/main/codigo/02_procesamiento-horas.R)
 # Se empleo chat gpt para ordenar, modificar, transformar,  optimizar codigos y unir codigos
 # Nota: Para usar la libreria open air es necesario tener una columana que se llame date
+
 # Cargar librerias --------------------------------------------------------
 
 library(dplyr)
 library(lubridate)
-
 
 # Modificar formato de la fecha del SINCA a formato (fecha-hora POSIXct)-------------------------------------------
 
@@ -25,7 +25,7 @@ Condes_Plantower <- Condes_Plantower %>%
     date_hour = as.POSIXct(    # Especifica el tipo de formato de hora (as.POSIXct)
       paste(Fecha, Hora_chr),  # Para unir ambas partes (año + hora)
       format = "%Y%m%d %H:%M",  # Especifica el formato: año-mes-dia-hora-minuto
-      tz = "Etc/GMT+4"  # Define la zona horaria de Chile
+      tz = "Etc/GMT+4"          # Define la zona horaria de Chile
     )
   )
 # # Unir las concentraciones del SINCA al df Condes_Plantawer por fecha ---------------------

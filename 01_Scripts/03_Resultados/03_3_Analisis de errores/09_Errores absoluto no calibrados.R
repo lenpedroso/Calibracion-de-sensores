@@ -14,10 +14,10 @@ source(here(
   "01_Scripts",
   "03_Resultados",
   "03_3_Analisis de errores",
-  "01_Cálculo de errores.R"
+  "08_Cálculo de errores.R"
 ))
 
-# # Cálculo de los errores individuales de cada observacion sin calibración --------
+# Cálculo de los errores individuales de cada observacion sin calibración --------
 errores_no_calibrados <- map_dfr(sensores, function(sensor) { # Iterar para cada sensor
     Condes_Plantower_SINCA %>%
       select(PM25_SINCA, all_of(sensor)) %>% # Seleccionar ambas columnas
@@ -30,7 +30,8 @@ errores_no_calibrados <- map_dfr(sensores, function(sensor) { # Iterar para cada
         Clasificacion       = "No calibrados" # Agrega una columna que clasifica estos datos
       )
   })
-
+# Obtener tabla 
+print(errores_no_calibrados)
 
 
 
