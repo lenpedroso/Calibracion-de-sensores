@@ -1,4 +1,4 @@
-# Calculo de los errores despues de aplicar un modelo de regresion lineal
+# Calculo de los parametros de error (MGE,MB) despues de aplicar un modelo de regresion lineal
 #Se debe instalar (install.packages("here")) para crear rutas que permitan 
 # cargar codigos (librerias, funciones) de script anteriores
 # Se debe descargar todas las carpeteas correspondient al proyecto 
@@ -24,11 +24,11 @@ Valores_calibrados <- Condes_Plantower_SINCA[, c("PM25_SINCA", sensor)] #columna
 # Eliminar filas con Na  ------------------------------------------------------------
 Valores_calibrados <- na.omit(Valores_calibrados)
   
-# #  Ajustar modelo: PM25_SINCA vs sensor (Plantower) ---------------------
+# Ajustar modelo: PM25_SINCA vs sensor (Plantower) ---------------------
 form <- reformulate(sensor, response = "PM25_SINCA")# Para construir una formula de regresion automatica
 modelo <- lm(form, data = Valores_calibrados)
 
-# # Extraer valores ajustados del modelo (se emplea broom)--------------------------
+# Extraer valores ajustados del modelo (se emplea broom)--------------------------
 aug <- augment(modelo)
 referencia <- aug$PM25_SINCA     # Valores observados
 predicho   <- aug$.fitted        # Valores calibrados (predichos por el modelo)

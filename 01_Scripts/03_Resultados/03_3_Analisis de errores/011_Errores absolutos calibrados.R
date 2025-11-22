@@ -1,6 +1,8 @@
+
+# Calculo de los errores absoluto para cada observación
 # Chat gpt fue empleado para modificar, ordenar y corregir errores en el codigo
-
-
+# Cargar libreria  ------------------------------------------------------
+library(purrr)
 
 # Función que ajusta el modelo y calcula errores para cada sensor de bajo costo -------
 errores_por_sensor <- function(sensor) {
@@ -21,15 +23,15 @@ aug <- augment(modelo)
 # Tabla de errores por observación
 tibble(
   Sensor        = sensor,
-  referencia    = aug$PM25_SINCA,  # valor real (SINCA)
+  referencia    = aug$PM25_SINCA,  # valor de referencia (SINCA)
   predicho      = aug$.fitted,     # valor ajustado por el modelo
   error         = predicho - referencia,
   error_abs     = abs(error),
   Clasificacion = "Calibrados"
 )
 }
-# Aplicar la función a todos los sensores y unir resultados en una tabla --
-errores_calibrados <- purrr::map_dfr(sensores, errores_por_sensor)
+# Aplicar la función a todos los sensores y une resultados en una tabla --
+errores_calibrados <- purrr::map_dfr(sensores, errores_por_sensor) #Aplicar una funcion a elemnetos
 
-# Ver la tabla final ------------------------------------------------------
+# Obtener tabla con todos los parametros de errores calibrados ----------
 print(errores_calibrados)
