@@ -1,4 +1,4 @@
-
+# Este script presenta las funciones para calcular los errores para cada sensor
 # Los valores de referencia se tratan de los valores de las estaciones oficiales de 
 # Chile (SINCA) y los predichos son los valores referidos a los sensores instalados (P1-P5)
 # A partir de los valores de referencia y los predichos se determinan los errores
