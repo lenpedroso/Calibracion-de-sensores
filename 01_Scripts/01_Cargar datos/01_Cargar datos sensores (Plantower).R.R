@@ -8,7 +8,7 @@ library(readr)
 
 # Seleccionar datos desde git hub -----------------------------------------
 
-url <- "https://raw.githubusercontent.com/lenpedroso/Calibracion-de-sensores/master/Sensores1.1/00_Datos/CON_Plantower.csv"
+url <- "https://github.com/lenpedroso/Calibracion-de-sensores/tree/master/00_Datos/CON_Plantower.csv"
 Condes_Plantower<- read_csv(url)
 
 # Especificar delimitador -------------------------------------------------
