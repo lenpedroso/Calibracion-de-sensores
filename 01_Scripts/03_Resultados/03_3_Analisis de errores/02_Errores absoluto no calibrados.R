@@ -20,14 +20,14 @@ source(here(
 # # Cálculo de los errores individuales de cada observacion sin calibración --------
 errores_no_calibrados <- map_dfr(sensores, function(sensor) { # Iterar para cada sensor
     Condes_Plantower_SINCA %>%
-      select(PM25_SINCA, all_of(sensor)) %>% 
-      transmute(             # Agregar nueva columnas de error al df
-        Sensor     = sensor,
-        referencia = PM25_SINCA,
-        predicho   = .data[[sensor]],
-        error      = predicho - referencia,
-        error_abs  = abs(error),
-        Clasificacion       = "No calibrados"
+      select(PM25_SINCA, all_of(sensor)) %>% # Seleccionar ambas columnas
+      transmute(             # Agregar nueva columnas de error al nuevo df en una tabla
+        Sensor     = sensor, # Columna llamada sensor con todos los sensores(P1-P5)
+        referencia = PM25_SINCA, # Renombra PM25_SINCA por referencia
+        predicho   = .data[[sensor]], # Extrae los valores del sensor que se está evaluando
+        error      = predicho - referencia, # Calculo de los errores
+        error_abs  = abs(error),    # Calculo del error absoluto
+        Clasificacion       = "No calibrados" # Agrega una columna que clasifica estos datos
       )
   })
 
