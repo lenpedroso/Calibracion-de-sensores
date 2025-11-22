@@ -10,7 +10,7 @@ errores_cal <- errores_completo %>% filter(Clasificacion == "Calibrados")
 
 # Grafico de violín para errores no calibrados ----------------------------
 
-p_violin_calibrado <- ggplot(errores_cal,
+violin_calibrado <- ggplot(errores_cal,
                                aes(x = Sensor, y = error_abs, fill = Sensor)) +
   geom_violin(trim = FALSE, alpha = 0.35, linewidth = 1.1) + # No recorta extremo y especifica la transparencia
   geom_boxplot(width = 0.10, alpha = 0.8, linewidth = 1.0, #Añadir box plot dentro del violin

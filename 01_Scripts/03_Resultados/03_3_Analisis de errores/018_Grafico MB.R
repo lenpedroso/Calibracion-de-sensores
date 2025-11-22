@@ -7,7 +7,7 @@
 # Chat gpt fue empleado para modificar, ordenar y corregir errores en el codigo
 
 # Gráfico MBE (barras)
-p_MB <- ggplot(Errores_antes_despues, 
+barras_MB <- ggplot(Errores_antes_despues, 
                aes(x = Sensor, y = MB, fill = Clasificación)) +
   geom_bar(stat = "identity", color = "black", # añade un borde negro a cada grafica
            position = position_dodge(width = 0.9)) +

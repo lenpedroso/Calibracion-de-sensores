@@ -1,3 +1,4 @@
+# El script permite hacer un grafico de la tendencia temporal de los sensores
 # El codigo para hacer el grafico fue extraido del repositorio  de la profesora
 # Sara Acevedo para modificar datos
 # temporales (https://github.com/Saryace/datascience-sinca/blob/main/codigo/03_plot

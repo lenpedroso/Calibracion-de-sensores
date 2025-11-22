@@ -7,7 +7,7 @@
 
 # Grafico de error antes y --------------------------------------------------
 
-p_MGE <- ggplot(Errores_antes_despues, 
+barras_MGE <- ggplot(Errores_antes_despues, 
                 aes(x = Sensor, y = MGE, fill = Clasificación)) +
   geom_bar(stat = "identity", color = "black", # añade un borde negro a cada grafica
            position = position_dodge(width = 0.9)) +
