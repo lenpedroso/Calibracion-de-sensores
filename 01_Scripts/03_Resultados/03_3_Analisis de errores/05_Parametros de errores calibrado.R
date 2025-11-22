@@ -1,5 +1,9 @@
 # Calculo de los errores despues de aplicar un modelo de regresion lineal
-# Chat gpt
+#Se debe instalar (install.packages("here")) para crear rutas que permitan 
+# cargar codigos (librerias, funciones) de script anteriores
+# Se debe descargar todas las carpeteas correspondientes a al proyecto 
+#"Calibración de sensores" para que pueda funcionar este script
+# Chat gpt fue empleado para modificar, ordenar y corregir errores en el codigo
 
 # Cargar libreias
 library(here)
@@ -35,7 +39,7 @@ calculo_error(referencia = referencia, predicho = predicho)
 
 # Aplicar a todos los sensores y unir en una sola tabla
 tabla_errores_calibrado <- map_dfr(sensores, errores_por_sensor)
-# Construir
+# Obtener tabla con todos los parametros de errores calibrados
 tabla_errores_calibrado <- tabla_errores_calibrado %>%
   mutate(Sensor = sensores) %>%   # Agrega los nombres P1-P5
   select(Sensor, everything())    # poner Sensor como primera columna

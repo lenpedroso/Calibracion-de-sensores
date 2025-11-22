@@ -2,7 +2,7 @@
 # de bajo costo instalados en Santiago de Chile, especificamente en la comuna Las Condes
 # Se tomo de base el repositorio de la profesora Sara Acevedo para modificar datos
 # temporales (https://github.com/Saryace/datascience-sinca/blob/main/codigo/02_procesamiento-horas.R)
-# Se empleo chat gpt para ordenar, modificar,  optimizar codigos y unir codigos
+# Se empleo chat gpt para ordenar, modificar, transformar,  optimizar codigos y unir codigos
 # Nota: Para usar la libreria open air es necesario tener una columana que se llame date
 # Cargar librerias --------------------------------------------------------
 

@@ -1,10 +1,14 @@
-# Chat GPT
-# se emplea la funcion setup para cargar el script con las funciones para el 
-# calculo de errores
+# Este script permite calcular los parametros de errores(MGE,MB) y crear una 
+#tabla con los resultados para cada uno de los sensores.
+#Se debe instalar (install.packages("here")) para crear rutas que permitan 
+# cargar codigos (librerias, funciones) de script anteriores
+# Se debe descargar todas las carpeteas correspondientes a al proyecto 
+#"Calibración de sensores" para que pueda funcionar este script
 # Chat gpt fue empleado para modificar, ordenar y corregir errores en el codigo
-# Se debe instalar (install.packages("here")) para crear rutas más seguras
 
-# Cargar libreias
+
+# # Cargar libreias -------------------------------------------------------
+
 library(here)
 
 # Seleccionar la ruta y carga las librerias y funciones para el cálculo de error --------------
