@@ -6,11 +6,22 @@
 # Cargar librerias --------------------------------------------------------
 library(patchwork)
 
-# Unir los graficos -------------------------------------------------------
+# Especificar una leyenda para los violines ----------------------------------------
 
-figura_final <-(violin_nocalibrado | violin_calibrado ) / # Especifica el orden en la cuadricula 
-  (barras_MGE  | barras_MB) +
-  plot_layout(guides = "collect") & # Una leyenda
-  theme(legend.position = "right") # Que las leyendas esten a la derecha
+figura_violines <- (violin_nocalibrado | violin_calibrado) +  # Especifica el orden en la cuadricula 
+  plot_layout(guides = "collect") & # Una leyenda       
+  theme(legend.position = "right")   # leyendas  a la derecha
+
+# Especificar una leyenda para los graficos de barras -------------------------------------------------------
+figura_barras <- (barras_MGE | barras_MB) +
+  plot_layout(guides = "collect") &        # Una sola leyenda para las barras
+  theme(legend.position = "right")      # leyendas  a la derecha
+
+
+# Unir figuras y especificar orden --------------------------------------------------------
+
+figura_final <- fila_violines / fila_barras
+
+# Ver figura --------------------------------------------------------------
 
 figura_final

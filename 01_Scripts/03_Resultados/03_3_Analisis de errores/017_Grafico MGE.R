@@ -16,7 +16,7 @@ barras_MGE <- ggplot(Errores_antes_despues,
                 position = position_dodge(width = 0.9)) + 
   geom_hline(yintercept = 20, # Linea en 20 discontinua 
              linetype = "dashed",
-             color = "red",
+             color = "firebrick4",
              linewidth = 1) +   #grosor
    scale_fill_manual(values = c(    # Para especificar los colores aemplear
     "No calibrados" = "#1E90FF",
@@ -30,3 +30,6 @@ barras_MGE <- ggplot(Errores_antes_despues,
   ) +
   labs(title = "MGE antes / después de calibrar",
        x = "Sensor", y = "MGE (µg/m³)")
+
+# Ver la grafico ----------------------------------------------------------
+barras_MGE

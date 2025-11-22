@@ -6,7 +6,10 @@
 #Los colores fueron extraidos de la siguiente página web (https://r-charts.com/es/colores/)
 # Chat gpt fue empleado para modificar, ordenar y corregir errores en el codigo
 
-# Gráfico MBE (barras)
+
+# Gráfico de barras  MB  ------------------------------------------------
+
+
 barras_MB <- ggplot(Errores_antes_despues, 
                aes(x = Sensor, y = MB, fill = Clasificación)) +
   geom_bar(stat = "identity", color = "black", # añade un borde negro a cada grafica
@@ -16,7 +19,7 @@ barras_MB <- ggplot(Errores_antes_despues,
                 position = position_dodge(width = 0.9)) +
   geom_hline(yintercept = 20,  # Linea en 20 discontinua 
              linetype = "dashed",
-             color = "red",      
+             color = "firebrick4",      
              linewidth = 1) +
   scale_fill_manual(values = c(
     "No calibrados" = "#1E90FF",
