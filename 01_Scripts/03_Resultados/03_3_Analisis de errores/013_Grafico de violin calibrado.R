@@ -30,6 +30,10 @@ violin_calibrado <- ggplot(errores_cal,
     plot.title = element_text(face = "bold", hjust = 0.5), #Título en negrita y centrado
     axis.text.x = element_text(angle = 45, hjust = 1) # Inclina el eje para evitar solapamientos
   ) +
-  labs(title = "Error absoluto — No calibrados",
+  labs(title = "Error absoluto — Calibrados",
        x = "Sensor", y = "Error absoluto (µg/m³)",
        fill = "Sensor")
+
+# Ver la grafico ----------------------------------------------------------
+
+violin_calibrado
