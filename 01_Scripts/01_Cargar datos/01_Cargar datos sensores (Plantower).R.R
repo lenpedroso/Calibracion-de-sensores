@@ -1,6 +1,9 @@
-
+# Este script permite descargar los datos de concentracion de los Plantower (sensores de bajo costos) 
 # Es necesario instalar paquete para leer csv (install.packages("readr").  
 # Los datos se cargan desde mi cuenta de git hub personal
+# Se emplearon las siguientas páginas web como base para delimitar las columnas
+#(https://www.rdocumentation.org/packages/readr/versions/2.1.6/topics/read_delim) y 
+# (https://readr.tidyverse.org/reference/read_delim.html)
 # Chat gptfue empleado para ordenar codigos y corregir errores
 
 # Cargar libreria ---------------------------------------------------------
