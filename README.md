@@ -36,7 +36,7 @@ Evaluar la precisión de sensores Plantower mediante su comparación con estacio
 
 ## 🗂️ ️Estructura del repositorio
 
-Para que pueda funcionar el repositorio correctamente es necesario descargar cada una de estas carpetas con sus respectivos scripts.
+Para que pueda funcionar el repositorio correctamente es necesario descargar cada una de estas carpetas con sus respectivos scripts y utilizarlo en el orden indicado por la numeración.
 
 ``` text
 01_Datos/
@@ -151,7 +151,6 @@ README.md
 -   `018_Grafico_MB.R`\
     Genera gráficos de barras para el análisis del Sesgo Medio (MB).
 
-Nota: Para usar la libreria open air es necesario tener una columana que se llame date.
 
 ## 👥 Audiencia
 
