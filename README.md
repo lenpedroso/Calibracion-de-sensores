@@ -2,6 +2,28 @@
 
 Este repositorio presenta los codigos necesarios para calibrar sensores de bajo costo (Plantawer). Estos se evaluaran tomando referencia el Sistema de Información Nacional de Calidad del Aire (SINCA) que es la estacion oficial refulatoria de calidad de aire en Chile.
 
+[![Red de sensores de bajo costo](https://github.com/USEPA/sensortoolkit/raw/master/docs/_readmefigs_/CSAM_3_crop.jpg?raw=true)](https://github.com/lenpedroso/Calibracionsensorpython)
+
+\*Esquema ilustrativo de una red de sensores de bajo costo.\
+Imagen tomada de [USEPA/sensortoolkit](https://github.com/USEPA/sensortoolkit)\
+[Calibracionsensorpython](https://github.com/lenpedroso/Calibracionsensorpython).
+
+## 📑 Índice
+
+-   [Descripción del proyecto](#-descripción-del-proyecto)
+-   [Objetivo](#-objetivo)
+-   [Estructura del repositorio](#%EF%B8%8F-estructura-del-repositorio)
+-   [Flujo de trabajo](#-flujo-de-trabajo)
+-   [Descripción de los scripts](#-descripción-de-cada-archivo-y-organización-de-los-scripts)
+    -   [1. Carga y preparación de datos](#1-carga-y-preparación-de-datos)
+    -   [2. Variación temporal y regresión](#2-visualización-de-la-variación-temporal-y-relación-con-la-referencia)
+    -   [3. Errores absolutos](#3-cálculo-de-errores-absolutos)
+    -   [4. Distribución de errores](#4-distribución-de-errores-gráficos-de-violín)
+    -   [5. Parámetros de error](#5-parámetros-de-error-mb-mge-desviaciones-estándar)
+    -   [6. Visualización final](#6-visualización-final-de-las-métricas-de-error)
+-   [ Audiencia](#-audiencia)
+-   [Recursos en línea](#-recursos-en-línea-utilizados-con-los-titulos-del-readme)
+
 # 📘 Descripción del proyecto
 
 Los sensores de bajo costo surgen como una alternativa complementaria al permitir una mayor cobertura espacial y una mejor caracterización de la variabilidad local de contaminates atmosféricos. No obstante, su desempeño se ve influenciado por factores ambientales (temperatura y humedad), por lo que tienden a sobreestimar los valores de sus concentraciones. Como consecuencia es necesario aplicarle ecuaciones de calibración para contrarrestar estas limitaciones.
@@ -41,7 +63,7 @@ Para que pueda funcionar el repositorio correctamente es necesario descargar cad
 README.md
 ```
 
-## Flujo de trabajo
+## 📈 Flujo de trabajo
 
 1.  Cargar los datos correspondiante al SINCA y los sensores de bajo costo(Plantower).
 2.  Conversión de fecha y hora a formato POSIXct.
@@ -51,7 +73,7 @@ README.md
 6.  Cálculo de métrica de error (MB, MGE) antes y después de calibración.
 7.  Visualización comparativa antes y después de la calibración.
 
-### Descripción de cada archivo y organización de los scripts
+### 📊 Descripción de cada archivo y organización de los scripts
 
 #### 1. Carga y preparación de datos
 
@@ -131,9 +153,12 @@ README.md
 
 Nota: Para usar la libreria open air es necesario tener una columana que se llame date.
 
-## Audiencia
+## 👥 Audiencia
 
-Este procedimiento está orientado a personas que tengan un conocimiento básico en analisis de contaminates atmósfericos para la compresión y analisi de los resultados
+Este repositorio está dirigido a estudiantes, investigadores y profesionales interesados en:
+
+• Monitoreo de calidad del aire con sensores de bajo costo.\
+• Calibración de sensores mediante modelos estadísticos en R.
 
 ## 🌐 Recursos en línea utilizados
 
