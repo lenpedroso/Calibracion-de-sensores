@@ -21,7 +21,7 @@ Imagen tomada de [USEPA/sensortoolkit](https://github.com/USEPA/sensortoolkit)\
     -   [4. Distribución de errores](#4-distribución-de-errores-gráficos-de-violín)
     -   [5. Parámetros de error](#5-parámetros-de-error-mb-mge-desviaciones-estándar)
     -   [6. Visualización final](#6-visualización-final-de-las-métricas-de-error)
--   [ Audiencia](#-audiencia)
+-   [Audiencia](#-audiencia)
 -   [Recursos en línea](#-recursos-en-línea-utilizados-con-los-titulos-del-readme)
 
 # 📘 Descripción del proyecto
