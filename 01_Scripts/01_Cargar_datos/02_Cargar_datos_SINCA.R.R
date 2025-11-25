@@ -5,8 +5,7 @@
 # Este paquete permite descargar los datos de la red oficial de monitoreo de calidad de aire en Chile
 #Sistema de Información Nacional de Calidad del Aire (SINCA)
 
-
-# # Paso 1. Instalar el paquetes ------------------------------------------
+# Paso 1. Instalar el paquetes ------------------------------------------
 
 # install.packages("AtmChile") # permite recopilar información de parámetros de calidad del aire del SINCA
 #install.packages("remotes") # se emplea para instalar paquetes que se encuentran en repositorios remotos (GitHub)

@@ -13,6 +13,7 @@
 
 library(dplyr)
 library(lubridate)
+library(stringr)
 
 # 2. Modificar formato de la fecha del SINCA a formato (fecha-hora POSIXct)-------------------------------------------
 
@@ -32,12 +33,14 @@ Las_Condes_Sinca_date$PM25 <- as.numeric(Las_Condes_Sinca_date$PM25)
 Las_Condes_Sinca_date <- Las_Condes_Sinca_date[, c("date_hour", "PM25")]
 
 # 3. Modificar formato de la fecha Sensores -------------------------------------------
-
-Condes_Plantower$Fecha<-Condes_Plantower$Fecha+ 20000000
-Condes_Plantower$Hora<-Condes_Plantower$Hora/100
-Condes_Plantower$Hora<-paste(Condes_Plantower$Hora,"00",sep=":",collapse = NULL)
-Condes_Plantower$date_hour<-paste(Condes_Plantower$Fecha, Condes_Plantower$Hora,sep = " ", collapse = NULL)
-Condes_Plantower$date_hour <- as.POSIXct(Condes_Plantower$date_hour, format = "%Y%m%d %H:%M", tz = "Etc/GMT+4")
+Condes_Plantower <- Condes_Plantower %>% 
+  mutate(
+    Fecha = Fecha + 20000000,
+    Hora  = Hora / 100,
+    Hora  = str_pad(Hora, 2, side = "left", pad = "0"),
+    date_hour = paste(Fecha, Hora, sep = " "),
+    date_hour = as.POSIXct(date_hour, format = "%Y%m%d %H", tz = "Etc/GMT+4")
+  )
 
 # 4. Unir las concentraciones del SINCA al df Condes_Plantawer por fecha ---------------------
 

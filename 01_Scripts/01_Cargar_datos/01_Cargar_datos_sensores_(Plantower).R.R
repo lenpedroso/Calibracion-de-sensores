@@ -6,15 +6,15 @@
 # (https://readr.tidyverse.org/reference/read_delim.html)
 # Chat gptfue empleado para ordenar codigos y corregir errores
 
-# Cargar libreria ---------------------------------------------------------
+# 1. Cargar libreria ---------------------------------------------------------
 library(readr)
 
-# Seleccionar datos desde git hub -----------------------------------------
+# 2. Seleccionar datos desde git hub -----------------------------------------
 
 url <- "https://raw.githubusercontent.com/lenpedroso/Calibracion-de-sensores/master/00_Datos/CON_Plantower.csv"
 Condes_Plantower<- read_csv(url)
 
-# Especificar delimitador -------------------------------------------------
+# 3. Especificar delimitador -------------------------------------------------
 
 Condes_Plantower <- read_delim(url, delim = ";", locale = locale(decimal_mark = ","))
 
