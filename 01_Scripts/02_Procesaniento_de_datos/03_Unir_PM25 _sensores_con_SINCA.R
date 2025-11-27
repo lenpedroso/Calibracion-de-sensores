@@ -1,15 +1,12 @@
-# Se unieron los datos de las concentraciones del SINCA con los datos de los sensores
+# Permite unir los datos de las concentraciones del SINCA con los datos de los sensores
 # de bajo costo instalados en Santiago de Chile, especificamente en la comuna Las Condes
 # Se tomo de base el repositorio de la profesora Sara Acevedo para modificar datos
 # temporales (https://github.com/Saryace/datascience-sinca/blob/main/codigo/02_procesamiento-horas.R)
 # y para usar la funcion joing
-# Para transformar fechas se uso la siguiente página web (https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/as.POSIX*)
-# y (https://certidevs.com/tutorial-r-lubridate-fechas-y-tiempo-hora)
-# Para convertir datos a numerico se uso el siguiente link (https://r-coder.com/funcion-as-numeric-r/)
 #Se empleo chat gpt para ordenar, modificar, transformar,  optimizar codigos y unir codigos
-# Nota: Para usar la libreria open air es necesario tener una columana que se llame date
+# Nota: Para usar la librería open air es necesario tener una columana que se llame date
 
-# 1. Cargar librerias --------------------------------------------------------
+# 1. Cargar librerías --------------------------------------------------------
 
 library(dplyr)
 library(lubridate)
@@ -33,7 +30,7 @@ Las_Condes_Sinca_date$PM25 <- as.numeric(Las_Condes_Sinca_date$PM25)
 Las_Condes_Sinca_date <- Las_Condes_Sinca_date[, c("date_hour", "PM25")]
 
 # 3. Modificar formato de la fecha Sensores -------------------------------------------
-Condes_Plantower <- Condes_Plantower %>% 
+Condes_Plantower <- Condes_Plantower %>%
   mutate(
     Fecha = Fecha + 20000000,
     Hora  = Hora / 100,
@@ -61,3 +58,4 @@ Condes_Plantower_SINCA <- Condes_Plantower_SINCA %>%
     hour = hour(date),
     wday = wday(date, label = TRUE, week_start = 1) 
   )
+
