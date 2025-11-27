@@ -1,28 +1,27 @@
-# Se utilizó chat gpt para ordenar codigos 
-# Se baso en el repositorio elaborado por 	Francisco Catalan Meyer para descargar los datos del SINCA
-# Usando su repositorio (https://github.com/franciscoxaxo/AtmChile/blob/main/R/ChileAirQuality.R)
-#Primeraqmente se instalo el paquete "AtmChile"
+# Este sccript permite descargar los datos de concentración de PM2.5 del 
+#Sistema de Información Nacional de Calidad del Aire (SINCA)
+# Se basó en el repositorio elaborado por Francisco Catalan Meyer para descargar los datos del SINCA
+# (https://github.com/franciscoxaxo/AtmChile/blob/main/R/ChileAirQuality.R)
+#Primeraqmente se instaló el paquete "AtmChile"
 # Este paquete permite descargar los datos de la red oficial de monitoreo de calidad de aire en Chile
 #Sistema de Información Nacional de Calidad del Aire (SINCA)
+#help(package = "AtmChile") # SaberPermite saber que tiene el paquete y como escribir las funciones
+# Se utilizó chat gpt para ordenar los códigos 
 
-# Paso 1. Instalar el paquetes ------------------------------------------
+#  1. Instalar el paquetes ------------------------------------------
 
-# install.packages("AtmChile") # permite recopilar información de parámetros de calidad del aire del SINCA
-#install.packages("remotes") # se emplea para instalar paquetes que se encuentran en repositorios remotos (GitHub)
+# install.packages("AtmChile") # Permite recopilar información de parámetros de calidad del aire del SINCA
+#install.packages("remotes") # Se emplea para instalar paquetes que se encuentran en repositorios remotos (GitHub)
 #install.packages("devtools") # Todas sus funciones aceptan una ruta (ej:URL) como argumento
+#install_github("franciscoxaxo/AtmChile")# Al ya estar cargada la libreria "remotes" se puede cargar paquetes desde GitHUB
 
-
-# # Paso 2.  Cargar librerias ---------------------------------------------
+#  2. Cargar librerías ---------------------------------------------
 
 library(remotes) 
 library(devtools)
 library(AtmChile)
 
-# Al ya estar cargada la libreria "remotes" se puede cargar paquetes desde GitHUB
-#install_github("franciscoxaxo/AtmChile")
-#help(package = "AtmChile") # SaberPermite saber que tiene el paquete y como escribir las funciones
-
-# # Paso 3 Descargar la base de datos de las concentraciones del SINCA --------
+# 3. Descargar la base de datos de las concentraciones del SINCA --------
 
  Las_Condes_Sinca<- ChileAirQuality(   # Funcion para leer los archivos de SINCA.csv
   Comunas = "Las Condes",
