@@ -9,12 +9,9 @@ library(ggplot2)
 library(dplyr)
 
 # 2.Seleccionar datos -------------------------------------------------------
-
 errores_no_calibrado <- errores_completo %>% filter(Clasificacion == "No calibrados")
 
-
 # 3.Gráfico de violín para errores no calibrados ----------------------------
-
 violin_nocalibrado <- ggplot(errores_no_calibrado , aes(x = sensor, y = error_abs, fill = sensor)) +
   geom_violin(trim = FALSE,
               alpha = 0.35,
