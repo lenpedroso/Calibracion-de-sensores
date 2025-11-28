@@ -8,7 +8,7 @@ Este repositorio presenta los codigos necesarios para calibrar sensores de bajo 
 Imagen tomada de [USEPA/sensortoolkit](https://github.com/USEPA/sensortoolkit)\
 [Calibracionsensorpython](https://github.com/lenpedroso/Calibracionsensorpython).
 
-## 📑 Índice
+## Índice
 
 -   [Descripción del proyecto](#-descripción-del-proyecto)
 -   [Objetivo](#-objetivo)
@@ -75,7 +75,7 @@ README.md
 
 ### 📊 Descripción de cada archivo y organización de los scripts
 
-#### 1. Carga y preparación de datos
+#### 1. Carga y prepara los datos
 
 -   `01_Cargar_datos_sensores_(Plantower).R`\
     Descarga los datos correspondientes a los sensores de bajo costo desde la nube.
@@ -151,13 +151,17 @@ README.md
 -   `018_Grafico_MB.R`\
     Genera gráficos de barras para el análisis del Sesgo Medio (MB).
 
-
 ## 👥 Audiencia
 
-Este repositorio está dirigido a estudiantes, investigadores y profesionales interesados en:
+Este repositorio está dirigido a estudiantes, investigadores y profesionales con conocimientos en:
 
 • Monitoreo de calidad del aire con sensores de bajo costo.\
 • Calibración de sensores mediante modelos estadísticos en R.
+
+## 🔗 Link de la página web con los resultados
+
+Los resultados pueden consultarse en la siguiente página web:\
+<https://lenpedroso.github.io/Pagina-web/>
 
 ## 🌐 Recursos en línea utilizados
 
