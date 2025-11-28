@@ -1,13 +1,10 @@
 # Script permite optener un scaterplot para realizar un modelo de regresión lineal
 # Es necesario instalar el paquete openair para realizar el grafico
 
-
 #1. Cargar librerias -----------------------------------------------------
 library(openair)
 
-
 # 2. Graficos de scaterplot    --------------------------------------------
-
 png("C:/Semestre 2-2025/Visualizacion/Calibracion de sensores/Calibracion de sensores/02_Figuras/2.scatterplot.png",
     width = 16, 
     height = 10,
