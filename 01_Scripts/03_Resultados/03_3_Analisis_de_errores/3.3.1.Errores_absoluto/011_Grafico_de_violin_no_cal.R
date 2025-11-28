@@ -4,34 +4,34 @@
 #página web (https://r-charts.com/es/distribucion/grafico-violin-grupo-ggplot2/)
 # Chat gpt fue empleado para modificar, ordenar y corregir errores en el codigo
 
-# Cargar librerias --------------------------------------------------------
+# 1.Cargar librerías --------------------------------------------------------
 library(ggplot2)
 library(dplyr)
 
-# Seleccionar datos -------------------------------------------------------
+# 2.Seleccionar datos -------------------------------------------------------
 
 errores_no_calibrado <- errores_completo %>% filter(Clasificacion == "No calibrados")
 
 
-# Grafico de violín para errores no calibrados ----------------------------
+# 3.Gráfico de violín para errores no calibrados ----------------------------
 
 violin_nocalibrado <- ggplot(errores_no_calibrado , aes(x = sensor, y = error_abs, fill = sensor)) +
   geom_violin(trim = FALSE,
               alpha = 0.35,
               linewidth = 1.1) + # No recorta extremo y especifica la transparencia
-  geom_boxplot( #Añadir box plot dentro del violin
+  geom_boxplot(     #Añadir box plot dentro del violin
     width = 0.10,
     alpha = 0.8,
     linewidth = 1.0,
-    outlier.size = 1.5
-  ) +   # Especifica el tamaño de los puntos outlier
+    outlier.size = 1.5# Especifica el tamaño de los puntos outlier
+  ) +   
   geom_hline(
     yintercept = 20,
     linetype = "dashed",
     # Añade una linea horizontal en y=20
-    color = "firebrick4",
+    color = "firebrick4",# Selecciona el color de la linea
     linewidth = 1
-  ) + # Selecciona el color de la linea
+  ) + 
   scale_y_continuous(limits = c(0, NA)) +       # Establece que el valor minimo es 0 y sin max(Na)
   scale_fill_manual(
     values = c(
@@ -51,3 +51,7 @@ violin_nocalibrado <- ggplot(errores_no_calibrado , aes(x = sensor, y = error_ab
   labs(title = "Error absoluto — No calibrados",
        x = "sensor", y = "Error absoluto (µg/m³)",
        fill = "sensor")
+
+# 3. Ver el gráfico ----------------------------------------------------------
+
+print(violin_nocalibrado)
