@@ -12,7 +12,6 @@ library(dplyr)
 
 # 2. Crear una tabla con los errores absolutos completos --------------------
 
-
 errores_completo <- bind_rows(    # Une listas por columnas aumentando el numero de filas
   errores_no_calibrados, errores_calibrados) 
 

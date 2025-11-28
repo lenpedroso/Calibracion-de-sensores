@@ -43,8 +43,8 @@ tibble(
   Clasificacion = "Calibrados"
 )
 }
-# Aplicar la función a todos los sensores y une resultados en una tabla --
+# 9. Aplicar la función a todos los sensores y une resultados en una tabla --
 errores_calibrados <- map(sensores, errores_por_sensor) #Aplicar una funcion a  cada sensor
 
-# Obtener tabla con todos los parametros de errores calibrados ----------
+# 10.Obtener tabla con todos los parametros de errores calibrados ----------
 print(errores_calibrados)

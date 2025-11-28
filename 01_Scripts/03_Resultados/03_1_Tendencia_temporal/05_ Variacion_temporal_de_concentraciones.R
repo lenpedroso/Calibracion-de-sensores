@@ -2,6 +2,7 @@
 # para determinar los resumenes diario y semanales fue copidada del siguiente link:
 #(https://github.com/Saryace/datascience-sinca/blob/main/codigo/02_procesamiento-horas.R)
 # Esta función  fue modificada para los df de trabajo.
+# Para mejor funcionamiento de la función(rlang) 
 #Chat gpt fue utilizado para corregir errores y como complemento para transformar la función
 
 # 1. Cargar librerias --------------------------------------------------------
