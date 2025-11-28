@@ -4,10 +4,10 @@
 #página web (https://r-charts.com/es/distribucion/grafico-violin-grupo-ggplot2/)
 # Chat gpt fue empleado para modificar, ordenar y corregir errores en el codigo
 
-# Seleccionar datos -------------------------------------------------------
+# 1. Seleccionar datos -------------------------------------------------------
 errores_cal <- errores_completo %>% filter(Clasificacion == "Calibrados")
 
-# Grafico de violín para errores no calibrados ----------------------------
+# 2. Gráfico de violín para errores no calibrados ----------------------------
 
 violin_calibrado <- ggplot(errores_cal, aes(x = sensor, y = error_abs, fill = sensor)) +
   geom_violin(
@@ -49,6 +49,6 @@ violin_calibrado <- ggplot(errores_cal, aes(x = sensor, y = error_abs, fill = se
   )
 
         
-# Ver el grafico ----------------------------------------------------------
+# 3. Ver el gráfico ----------------------------------------------------------
 
-violin_calibrado
+print(violin_calibrado)
