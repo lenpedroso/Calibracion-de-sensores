@@ -8,6 +8,11 @@
 library (ggplot2)
 
 # 2. Grafico de variacion temporal por horas y dias de la semnana -----------
+png("C:/Semestre 2-2025/Visualizacion/Calibracion de sensores/Calibracion de sensores/02_Figuras/1.variacion.png",
+    width = 16, 
+    height = 10,
+    units = "in",
+    res = 900)
 ggplot(hour_wday,
        aes(
          x = hour,
@@ -49,9 +54,9 @@ ggplot(hour_wday,
     )
   ) +
   theme_bw() +
-  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
-        legend.position = "right")
+  theme(legend.position = "right")
 
 # Obtener el grafico ------------------------------------------------------
 print(variacion)
+dev.off()
 
