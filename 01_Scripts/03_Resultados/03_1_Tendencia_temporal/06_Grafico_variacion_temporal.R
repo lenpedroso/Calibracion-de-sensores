@@ -2,14 +2,12 @@
 # El codigo para hacer el grafico fue extraido del repositorio  de la profesora
 # Sara Acevedo para modificar datos
 # temporales (https://github.com/Saryace/datascience-sinca/blob/main/codigo/03_plot
-# Chat gpt fue empleado para modificar, ordenar y solucionar errores de codigo
+# Chat gpt fue empleado para modificar, ordenar y solucionar errores de codigo.
 
 # 1. Cargar librerias --------------------------------------------------------
 library (ggplot2)
 
-# 2. Grafico de variacion temporal por horas yu dias de la semnana -----------
-
-
+# 2. Grafico de variacion temporal por horas y dias de la semnana -----------
 ggplot(hour_wday,
        aes(
          x = hour,
@@ -51,21 +49,9 @@ ggplot(hour_wday,
     )
   ) +
   theme_bw() +
-  theme(
-    legend.position   = "right",
-    plot.title        = element_text(hjust = 0.5, face = "bold"),
-    strip.background  = element_rect(fill = "grey90", color = NA),
-    strip.text        = element_text(face = "bold"),
-    axis.text.x       = element_text(angle = 0, hjust = 0.5)
-  )
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+        legend.position = "right")
 
 # Obtener el grafico ------------------------------------------------------
 print(variacion)
-variacion <- png("C:/Semestre 2-2025/Visualizacion/Calibracion de sensores/Calibracion de sensores/02_Figuras/1.variacion.png",
-                 width = 16, 
-                 height = 10,
-                 units = "in",
-                 res = 900)
-
-dev.off()
 
