@@ -35,7 +35,7 @@ tibble(
   Clasificacion = "No calibrados"
 )
 })
-# # 5. Obtener tabla ------------------------------------------------------
+ # 5. Obtener tabla ------------------------------------------------------
 print(errores_no_calibrados)
 
 
