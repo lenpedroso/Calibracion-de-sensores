@@ -4,12 +4,14 @@
 # Esta función  fue modificada para los df de trabajo.
 #Chat gpt fue utilizado para corregir errores y como complemento para hacer la función
 
-# cargar librerias --------------------------------------------------------
+# 1. Cargar librerias --------------------------------------------------------
 
 library(dplyr)   
 library(tidyr)    
 library(rlang)   
-# Funcion para calcular las concentraciones semanales
+
+# 2. Funcion para calcular las concentraciones semanales ----------------
+
 Condes_summary_pm25 <- function(datos, tiempo, pm_col = "value") {
   datos %>%
     group_by(across(all_of(tiempo)), sensor) %>% # La funcion fue realizada para cada sensor
@@ -23,8 +25,10 @@ Condes_summary_pm25 <- function(datos, tiempo, pm_col = "value") {
       .groups = "drop"
     )
 }
-# Resumenes por dia de la hora y por dia de la semana
+
+# 3. Resumenes por dia de la hora y por dia de la semana ---------------------
 hour_wday <- Condes_summary_pm25(Condes_Plantower_SINCA_long3, c("wday", "hour"),"value_PM25")
 hour <- Condes_summary_pm25(Condes_Plantower_SINCA_long3, "hour", "value_PM25")
 wday <- Condes_summary_pm25(Condes_Plantower_SINCA_long3, "wday", "value_PM25")
+
 
