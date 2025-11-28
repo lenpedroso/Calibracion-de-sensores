@@ -1,11 +1,9 @@
-# Permite unir los datos de las concentraciones del SINCA con los datos de los sensores
-# de bajo costo instalados en Santiago de Chile, especificamente en la comuna Las Condes
+# Permite unir los datos de las concentraciones del SINCA con los datos de los sensores 
 # Se tomo de base el repositorio de la profesora Sara Acevedo para modificar datos
 # temporales (https://github.com/Saryace/datascience-sinca/blob/main/codigo/02_procesamiento-horas.R)
 # y para usar la funcion joing
-#Se empleo chat gpt para ordenar, modificar, transformar,  optimizar codigos y unir codigos
+#Se empleo chat gpt para ordenar, modificar, transformar, optimizar codigos y unir codigos
 # Nota: Para usar la librería open air es necesario tener una columana que se llame date
-
 # 1. Cargar librerías --------------------------------------------------------
 
 library(dplyr)
