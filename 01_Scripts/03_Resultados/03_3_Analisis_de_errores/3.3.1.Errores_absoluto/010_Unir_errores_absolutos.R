@@ -3,7 +3,8 @@
 # (https://dplyr.tidyverse.org/reference/bind_rows.html)
 # Chat gpt fue empleado para modificar, ordenar y corregir errores en el codigo
 # Empleo rbind porque me garantiza quue los datos se mantengas a lo largo 
-# uniendo solo por filas para despues poder usar ggplot
+# uniendo solo por filas para despues poder usar ggplot sin aplicarle mayor 
+#transformación a los datos
 
 # 1. Cargar librerias ------------------------------------------------------
 
