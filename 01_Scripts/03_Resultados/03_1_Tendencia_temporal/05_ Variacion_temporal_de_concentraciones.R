@@ -2,7 +2,7 @@
 # para determinar los resumenes diario y semanales fue copidada del siguiente link:
 #(https://github.com/Saryace/datascience-sinca/blob/main/codigo/02_procesamiento-horas.R)
 # Esta función  fue modificada para los df de trabajo.
-#Chat gpt fue utilizado para corregir errores y como complemento para hacer la función
+#Chat gpt fue utilizado para corregir errores y como complemento para transformar la función
 
 # 1. Cargar librerias --------------------------------------------------------
 
@@ -16,9 +16,9 @@ Condes_summary_pm25 <- function(datos, tiempo, pm_col = "value") {
   datos %>%
     group_by(across(all_of(tiempo)), sensor) %>% # La funcion fue realizada para cada sensor
     summarise(
-      n    = sum(!is.na(.data[[pm_col]])), # Para determinar los datos válidos
+      n    = sum(!is.na(.data[[pm_col]])),# Para determinar los datos válidos
       mean = mean(.data[[pm_col]], na.rm = TRUE),
-      sd   = sd(.data[[pm_col]],  na.rm = TRUE),
+      sd   = sd(.data[[pm_col]], na.rm = TRUE),
       se   = ifelse(n > 1, sd / sqrt(n), NA_real_),
       ymin = mean - 1.96 * se,
       ymax = mean + 1.96 * se,
