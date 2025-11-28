@@ -1,4 +1,4 @@
-# Script para realizar los graficos de violin para el analisis de la distribucion 
+# Script para realizar los graficos de violin para el analisis de la distribucion (no calibrado)
 # de los errores absolutos por cada una de las observaciones antes de la calibración
 #Para realizar los graficos se tomo de base los script presentado en la siguiente 
 #página web (https://r-charts.com/es/distribucion/grafico-violin-grupo-ggplot2/)
