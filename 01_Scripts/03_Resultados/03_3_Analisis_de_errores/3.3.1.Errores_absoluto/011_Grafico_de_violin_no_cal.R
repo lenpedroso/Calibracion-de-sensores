@@ -52,6 +52,6 @@ violin_nocalibrado <- ggplot(errores_no_calibrado , aes(x = sensor, y = error_ab
        x = "sensor", y = "Error absoluto (µg/m³)",
        fill = "sensor")
 
-# 3. Ver el gráfico ----------------------------------------------------------
+# 4. Ver el gráfico ----------------------------------------------------------
 
 print(violin_nocalibrado)
