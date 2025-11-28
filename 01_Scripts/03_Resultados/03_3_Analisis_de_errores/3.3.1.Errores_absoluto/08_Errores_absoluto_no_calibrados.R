@@ -1,9 +1,8 @@
-# Procedimiento para calcular los errores absoluto para cada uno de los valores 
+# Procedimiento para calcular los errores absoluto para cada uno de los sensores ante de la calibracion  
 # Se utlizaron los diferentes link para usar map y seleccionar elementos de una lista
 #(https://purrr.tidyverse.org/reference/map_dfr.html#arguments) y 
 #(https://stackovercoder.es/programming/1169456/the-difference-between-bracket-and-double-bracket-for-accessing-the-el)
-# Para la elaboracion de la tablas se uso (https://tibble.tidyverse.org/reference/tibble.html)
-# Chat gpt fue empleado para modificar, ordenar y corregir errores en el codigo
+# Chat gpt fue empleado para modificar, ordenar y corregir errores en el codigo.
 
 # 1. Cargar libreias -------------------------------------------------------
 library(dplyr)
